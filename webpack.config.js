@@ -60,21 +60,21 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
-    // optimization: {
-    //     // 웹팩의 최적화 활성화 옵션입니다.
-    //     minimize: true,
-    //     minimizer: [
-    //         new ImageMinimizerPlugin({
-    //             test: /\.(png|jpe?g|gif|svg)$/,
-    //             minimizer: {
-    //                 implementation: ImageMinimizerPlugin.imageminMinify,
-    //                 options: {
-    //                     plugins: [
-    //                         ["imagemin-optipng", { optimizationLevel: 1 }]
-    //                     ]
-    //                 }
-    //             }
-    //         }),
-    //     ]
-    // }
+    optimization: {
+        // 웹팩의 최적화 활성화 옵션입니다.
+        minimize: true,
+        minimizer: [
+            new ImageMinimizerPlugin({
+                test: /\.(png|jpe?g|gif|svg)$/,
+                minimizer: {
+                    implementation: ImageMinimizerPlugin.imageminMinify,
+                    options: {
+                        plugins: [
+                            ["imagemin-optipng", { optimizationLevel: 1 }]
+                        ]
+                    }
+                }
+            }),
+        ]
+    }
 }
